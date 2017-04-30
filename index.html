@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Studieområde_2_Inzoom</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./Qgis2threejs.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+    <style>
+        [type="checkbox"]:checked + .btn, [type="radio"]:checked + .btn {
+            background-color: green;
+        }
+
+        .layer-sets-wrapper label {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-tabs nav-justified">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#intro">Introduction</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#input_data">Input Data</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#model">Model</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="intro" role="tabpanel">
+            <p><img style="float:left;margin:4px 10px;" src="./Salamander.jpg">The crested newt is an amphibian that is red listed in Sweden. It usually becomes 10-16 cm long. They live most of the year on land, in forests and in wet meadows. It prefers to have plenty of dead woods and leaves where it can find food and hiding places. Stone rocks, blocks and caves contribute good wintering sites. The eggs are laid in April and May in smaller stagnant collections of that are free from fish. Like most other amphibians, the fry lives in the water and breathes with gills. After three to four months they develop bones and lungs, and walk on land. It is important that the water collections do not dry out before the fry has become so large that they can leave the water.</p>
+            <p>The crested newt is threatened by regrowth around the natural water collections, and the thickening and implantation of fish and crayfish. It has disappeared from many places where it previously existed in Sweden.</p>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33456.256804132165!2d15.5591386!3d58.39312939999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7c82fde576bcdeb8!2sCreactive+by+Science+Park+Mj%C3%A4rdevi!5e0!3m2!1sen!2sse!4v1493479584538"
+                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="tab-pane" id="input_data" role="tabpanel">...</div>
+        <div class="tab-pane" id="model" role="tabpanel">
+            <div class="row">
+                <div class="col-lg-9 col-xs-12" id="webgl"></div>
+                <div class="col-lg-3 col-xs-12 layer-sets-wrapper">
+                    <label>
+                        <input class="hidden-xs-up" type="radio" name="switch_layer_set" value="0">
+                        <span class="btn btn-info">LAYER SET 1</span>
+                    </label>
+                    <label>
+                        <input class="hidden-xs-up" type="radio" name="switch_layer_set" value="1">
+                        <span class="btn btn-info">LAYER SET 2</span>
+                    </label>
+                    <label>
+                        <input class="hidden-xs-up" type="radio" name="switch_layer_set" value="2">
+                        <span class="btn btn-info">LAYER SET 3</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="layer-switch-wrapper">
+                <label>
+                    <input class="hidden-xs-up" type="checkbox" name="layer" value="0">
+                    <span class="btn btn-info">LAYER 1</span>
+                </label>
+                <label>
+                    <input class="hidden-xs-up" type="checkbox" name="layer" value="1">
+                    <span class="btn btn-info">LAYER 2</span>
+                </label>
+            </div>
+            <!-- popup -->
+            <div id="popup" style="display:none;">
+                <div id="closebtn">&times;</div>
+                <div id="popupbar"></div>
+                <div id="popupbody">
+                    <div id="popupcontent"></div>
+                    <div id="pageinfo">
+                        <h1>Current View URL</h1>
+                        <div><input id="urlbox" type="text"></div>
+
+                        <h1>Usage</h1>
+                        <div id="usage"></div>
+
+                        <h1>About</h1>
+                        <div id="about">This page was made with <a href="http://www.qgis.org/" target="_blank">QGIS</a>
+                            and <a
+                                    href="https://github.com/minorua/Qgis2threejs" target="_blank">Qgis2threejs</a>
+                            plugin,
+                            and uses the following library:
+                            <ul>
+                                <li>three.js <a href="http://threejs.org/" target="_blank">http://threejs.org/</a> <a
+                                        href="./threejs/LICENSE" target="_blank" class="license">(LICENSE)</a></li>
+                                <li>dat-gui <a href="https://code.google.com/p/dat-gui/" target="_blank">https://code.google.com/p/dat-gui/</a>
+                                    <a href="./dat-gui/license.txt" target="_blank" class="license">(LICENSE)</a></li>
+                                <li id="lib_proj4js" style="display: none;">Proj4js <a
+                                        href="http://trac.osgeo.org/proj4js/"
+                                        target="_blank">http://trac.osgeo.org/proj4js/</a>
+                                    <a href="./proj4js/LICENSE.md" target="_blank" class="license">(LICENSE)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <div id="footer"></div>
+</div>
+<script src="./threejs/three.min.js"></script>
+<script src="./Qgis2threejs.js"></script>
+<script src="./threejs/OrbitControls.js"></script>
+<script>
+    var option = Q3D.Options;
+
+</script>
+<script src="./Studieomrade_2_Inzoom.js"></script>
+<script>
+    if (typeof proj4 !== "undefined") document.getElementById("lib_proj4js").style.display = "list-item";
+
+    var container = document.getElementById("webgl");
+    // initialize application
+    var app;
+
+    var initialize = function () {
+        if (typeof Q3D.application !== "undefined") {
+            app = Q3D.application;
+            app.init(container);
+
+            // load the project
+            app.loadProject(project);
+
+            app.addEventListeners();
+            app.start();
+
+            clearInterval(waitQ3dInterval);
+        }
+    };
+
+    waitQ3dInterval = setInterval(initialize, 500)
+
+</script>
+<script src="./dat-gui/dat.gui.min.js"></script>
+<script src="./jquery-3.2.1.min.js"></script>
+<script src="./bootstrap.min.js"></script>
+<script src="./g7.js"></script>
+<!--<script src="./dat-gui_panel.js"></script>-->
+
+</body>
+</html>
