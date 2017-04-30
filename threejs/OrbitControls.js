@@ -137,7 +137,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 	var thetaDelta = 0;
 	var cameraPhiDelta = 0;
 	var cameraThetaDelta = 0;
-	var scale = 1;
+	var scale = 0.66;
 	var pan = new THREE.Vector3();
 
 	var lastPosition = new THREE.Vector3();
