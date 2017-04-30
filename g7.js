@@ -1,6 +1,9 @@
 $(document).ready(function () {
     var layerSet = 0,
-        layersPerSet = 2;
+        layersPerSet = 3;
+    $.each(project.layers, function (k, layer, o) {
+        layer.setVisible(Math.floor(k/layersPerSet) === parseInt(0))
+    });
     $('[name=layer]').on('change', function () {
             project.layers[layersPerSet * layerSet + parseInt(this.value)].setVisible(this.checked);
     });

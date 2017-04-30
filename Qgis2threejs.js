@@ -595,7 +595,7 @@ limitations:
       r.push(Q3D.Utils.convertToDMS(lonLat[1], lonLat[0]) + ", Elev. " + pt.z.toFixed(2));
     }
     r.push("</td></tr></table>");
-      r.push("<table class='layer'><caption>Hola</caption><tr><td><img src='"+layer.name+".jpg' />");
+      r.push("<table class='layer'><caption>Hola</caption><tr><td><img src='./Salamander.jpg' />");
     r.push("</td></tr></table>");
 
     if (layerId !== undefined && featureId !== undefined && layer.a !== undefined) {

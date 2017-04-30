@@ -15,6 +15,10 @@
             display: block;
         }
 
+        #input_data .col-4 img {
+            max-width: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -32,42 +36,142 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="intro" role="tabpanel">
-            <p><img style="float:left;margin:4px 10px;" src="./Salamander.jpg">The crested newt is an amphibian that is red listed in Sweden. It usually becomes 10-16 cm long. They live most of the year on land, in forests and in wet meadows. It prefers to have plenty of dead woods and leaves where it can find food and hiding places. Stone rocks, blocks and caves contribute good wintering sites. The eggs are laid in April and May in smaller stagnant collections of that are free from fish. Like most other amphibians, the fry lives in the water and breathes with gills. After three to four months they develop bones and lungs, and walk on land. It is important that the water collections do not dry out before the fry has become so large that they can leave the water.</p>
-            <p>The crested newt is threatened by regrowth around the natural water collections, and the thickening and implantation of fish and crayfish. It has disappeared from many places where it previously existed in Sweden.</p>
+            <p><img style="float:left;margin:4px 10px;" src="./Salamander.jpg">The crested newt is an amphibian that is
+                red listed in Sweden. It usually becomes 10-16 cm long. They live most of the year on land, in forests
+                and in wet meadows. It prefers to have plenty of dead woods and leaves where it can find food and hiding
+                places. Stone rocks, blocks and caves contribute good wintering sites. The eggs are laid in April and
+                May in smaller stagnant collections of that are free from fish. Like most other amphibians, the fry
+                lives in the water and breathes with gills. After three to four months they develop bones and lungs, and
+                walk on land. It is important that the water collections do not dry out before the fry has become so
+                large that they can leave the water.</p>
+            <p>The crested newt is threatened by regrowth around the natural water collections, and the thickening and
+                implantation of fish and crayfish. It has disappeared from many places where it previously existed in
+                Sweden.</p>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33456.256804132165!2d15.5591386!3d58.39312939999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7c82fde576bcdeb8!2sCreactive+by+Science+Park+Mj%C3%A4rdevi!5e0!3m2!1sen!2sse!4v1493479584538"
-                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <img src="./Triturus_cristatus_dis.png"/>
         </div>
-        <div class="tab-pane" id="input_data" role="tabpanel">...</div>
+        <div class="tab-pane" id="input_data" role="tabpanel">
+            <div class="row">
+                <div class="col-4">
+                    <img src="./layers/11.png">
+                </div>
+                <div class="col-8">
+                    <h2>1. Species XY</h2>
+                    <p>
+                    <li>Location of the species classification can be obtained in open source data in Swedish Species
+                        Information Centre.
+                    </li>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="./layers/10.png">
+                </div>
+                <div class="col-8">
+                    <h2>2. Habitat (water ponds)</h2>
+                    <p>
+                    <li>Water class from land cover data</li>
+                    <li>The data can be obtained from Sentinel-2, LANDSAT-8 or MODIS.</li>
+                    <li>Manual Image Processing, A variety of computer graphic techniques, such as HD Orthographic image
+                        processing. can be obtained effectively with UAV.
+                    </li>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="./layers/8.png">
+                </div>
+                <div class="col-8">
+                    <h2>3. KNAS-Swedish land cover class data</h2>
+                    <p>
+                        Is available and open source code for public.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="./layers/??.png">
+                </div>
+                <div class="col-8">
+                    <h2>4. Digital Elevation Model (DEM)</h2>
+                    <p>
+                        Comprise a valuable source of elevation information data required for many engineering
+                        applications. In this case, it represents the possibilities of species migration in terrain’s
+                        surfaces. The source of data can be extracted from Google Earth TMImagery.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="./layers/9.png">
+                </div>
+                <div class="col-8">
+                    <h2>5. DSM Roads</h2>
+                    <p>
+                    <li> The roads indicate the speed of the vehicle which will endanger the species.</li>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="./layers/14.png">
+                </div>
+                <div class="col-8">
+                    <h2>6. Climate variables (temperate and precipitation)</h2>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="./layers/13.png">
+                </div>
+                <div class="col-8">
+                    <h2>7. Combined maps</h2>
+                    <p>
+                        If the five mapping data are combined, the optimal solution for urbanization in 2050 can be
+                        mapped. Native resolution data are organized in array values which available as TIFF extension
+                        files. The authors believe that this technique is promising to increase the awareness for next
+                        generation. The user-friendly interface android application is also expected to be built and it
+                        can be implemented to other species.
+                    </p>
+                </div>
+            </div>
+
+        </div>
         <div class="tab-pane" id="model" role="tabpanel">
             <div class="row">
                 <div class="col-lg-9 col-xs-12" id="webgl"></div>
                 <div class="col-lg-3 col-xs-12 layer-sets-wrapper">
                     <label>
-                        <input class="hidden-xs-up" type="radio" name="switch_layer_set" value="0">
-                        <span class="btn btn-info">LAYER SET 1</span>
+                        <input class="hidden-xs-up" type="radio" name="switch_layer_set" value="0" checked>
+                        <span class="btn btn-info">CURRENT SCENARIO</span>
                     </label>
                     <label>
                         <input class="hidden-xs-up" type="radio" name="switch_layer_set" value="1">
-                        <span class="btn btn-info">LAYER SET 2</span>
+                        <span class="btn btn-info">AFTER TRANSFORMATION</span>
                     </label>
                     <label>
-                        <input class="hidden-xs-up" type="radio" name="switch_layer_set" value="2">
-                        <span class="btn btn-info">LAYER SET 3</span>
+                        <input class="hidden-xs-up" type="radio" name="switch_layer_set" value="2" disabled>
+                        <span class="btn btn-info">AFTER ANOTHER TRANSFORMATION</span>
                     </label>
                 </div>
             </div>
 
             <div class="layer-switch-wrapper">
                 <label>
-                    <input class="hidden-xs-up" type="checkbox" name="layer" value="0">
+                    <input class="hidden-xs-up" type="checkbox" name="layer" value="0" checked>
                     <span class="btn btn-info">LAYER 1</span>
                 </label>
                 <label>
-                    <input class="hidden-xs-up" type="checkbox" name="layer" value="1">
+                    <input class="hidden-xs-up" type="checkbox" name="layer" value="1" checked>
                     <span class="btn btn-info">LAYER 2</span>
                 </label>
             </div>
+            <div class="pull-right"><img class="pull-right" src="./lable.jpg"></div>
             <!-- popup -->
             <div id="popup" style="display:none;">
                 <div id="closebtn">&times;</div>
@@ -115,7 +219,7 @@
     var option = Q3D.Options;
 
 </script>
-<script src="./Studieomrade_2_Inzoom.js"></script>
+<script src="./salamanders_3Dmodel.js"></script>
 <script>
     if (typeof proj4 !== "undefined") document.getElementById("lib_proj4js").style.display = "list-item";
 
