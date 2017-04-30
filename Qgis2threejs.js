@@ -579,7 +579,7 @@ limitations:
       layer = app.project.layers[layerId];
       r.push('<table class="layer">');
       r.push("<caption>Layer name</caption>");
-      r.push("<tr><td>" + layer.name + "</td></tr>");
+      r.push("<tr><td><h3>" + layer.name + "</h3></td></tr>");
       r.push("</table>");
     }
 
@@ -595,8 +595,8 @@ limitations:
       r.push(Q3D.Utils.convertToDMS(lonLat[1], lonLat[0]) + ", Elev. " + pt.z.toFixed(2));
     }
     r.push("</td></tr></table>");
-      r.push("<table class='layer'><caption>Hola</caption><tr><td><img src='./Salamander.jpg' />");
-    r.push("</td></tr></table>");
+    if (layer.name.startsWith('Salamander'))
+      r.push("<table class='layer'><caption>Salamander</caption><tr><td><img src='./Salamander.jpg' /></td></tr></table>");
 
     if (layerId !== undefined && featureId !== undefined && layer.a !== undefined) {
       // attributes
